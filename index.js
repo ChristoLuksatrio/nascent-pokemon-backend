@@ -23,13 +23,13 @@ const server = async () => {
   });
 
   const PORT = process.env.PORT || 5000;
-  const connectionString = process.env.mongodb || "";
-  try {
-    await mongoose.connect(connectionString);
-    console.log(`Mongoose connected on port ${PORT}`);
-  } catch (error) {
-    console.log("error is", error);
-  }
+  // const connectionString = process.env.mongodb || "";
+  // try {
+  //   await mongoose.connect(connectionString);
+  //   console.log(`Mongoose connected on port ${PORT}`);
+  // } catch (error) {
+  //   console.log("error is", error);
+  // }
 
   app.listen(PORT, () =>
     console.log(`Express server is running on port http://localhost:${PORT}`)
