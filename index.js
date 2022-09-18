@@ -1,7 +1,7 @@
-// import { ApolloServer } from "apollo-server-express";
+import { ApolloServer } from "apollo-server-express";
 import express from "express";
-// import resolvers from "./resolvers";
-// import typeDefs from "./typeDefs";
+import resolvers from "./resolvers";
+import typeDefs from "./typeDefs";
 // import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -11,12 +11,12 @@ const server = async () => {
   app.use(cors());
   dotenv.config();
 
-  // const apolloServer = new ApolloServer({
-  //   typeDefs,
-  //   resolvers,
-  // });
-  // await apolloServer.start();
-  // apolloServer.applyMiddleware({ app });
+  const apolloServer = new ApolloServer({
+    typeDefs,
+    resolvers,
+  });
+  await apolloServer.start();
+  apolloServer.applyMiddleware({ app });
 
   app.use((req, res) => {
     res.send("Behold! My pokemon form server has started");
