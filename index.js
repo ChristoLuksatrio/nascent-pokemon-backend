@@ -2,7 +2,7 @@ import { ApolloServer } from "apollo-server-express";
 import express from "express";
 import resolvers from "./resolvers.js";
 import typeDefs from "./typeDefs.js";
-// import mongoose from "mongoose";
+import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -23,13 +23,13 @@ const server = async () => {
   });
 
   const PORT = process.env.PORT || 5000;
-  // const connectionString = process.env.mongodb || "";
-  // try {
-  //   await mongoose.connect(connectionString);
-  //   console.log(`Mongoose connected on port ${PORT}`);
-  // } catch (error) {
-  //   console.log("error is", error);
-  // }
+  const connectionString = process.env.mongodb || "";
+  try {
+    await mongoose.connect(connectionString);
+    console.log(`Mongoose connected on port ${PORT}`);
+  } catch (error) {
+    console.log("error is", error);
+  }
 
   app.listen(PORT, () =>
     console.log(`Express server is running on port http://localhost:${PORT}`)
