@@ -1,4 +1,4 @@
-import Submission from "./models/Submission";
+import Submission from "./models/Submission.js";
 
 const resolvers = {
   Query: {
@@ -11,7 +11,7 @@ const resolvers = {
     },
   },
   Mutation: {
-    addSubmission: async (_root: any, args: any) => {
+    addSubmission: async (root, args) => {
       const newSubmission = new Submission({
         firstName: args.firstName,
         lastName: args.lastName,

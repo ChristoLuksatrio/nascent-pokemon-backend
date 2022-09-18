@@ -1,7 +1,7 @@
 import { ApolloServer } from "apollo-server-express";
 import express from "express";
-import resolvers from "./resolvers";
-import typeDefs from "./typeDefs";
+import resolvers from "./resolvers.js";
+import typeDefs from "./typeDefs.js";
 // import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -32,9 +32,7 @@ const server = async () => {
   // }
 
   app.listen(PORT, () =>
-    console.log(
-      `Express server is running on port http://localhost:${PORT} baby`
-    )
+    console.log(`Express server is running on port http://localhost:${PORT}`)
   );
 };
 
