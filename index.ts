@@ -38,3 +38,5 @@ const initServer = async () => {
 };
 
 initServer();
+
+module.exports = initServer;
